@@ -1,0 +1,19 @@
+# Python Virtual Environment
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local Data Lake & Simulated Logs
+data_lake/*.jsonl
+data_lake/*.log
+data_lake/telemetry_raw.jsonl
+
+# IDE Configurations & OS junk
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Docker Environment Files
+.env

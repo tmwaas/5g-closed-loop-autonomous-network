@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oss-telemetry-deployment
+  labels:
+    app: oss-telemetry
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: oss-telemetry
+  template:
+    metadata:
+      labels:
+        app: oss-telemetry
+    spec:
+      containers:
+      - name: telemetry-container
+        image: <your-acr-name>.azurecr.io/oss-telemetry:latest 
+        ports:
+        - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: oss-telemetry-service
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8000
+    targetPort: 8000
+  selector:
+    app: oss-telemetry
