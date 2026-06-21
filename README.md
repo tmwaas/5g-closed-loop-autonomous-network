@@ -50,6 +50,22 @@ The framework follows an event-driven closed-loop automation pattern (**MAPE-K**
 
 ---
 
+## 📊 Live Demonstration & Observability
+
+To validate the Closed-Loop foundation, the `telemetry` streaming pipeline works hand-in-hand with the Orchestrator Agent to detect anomalies and visualize self-healing metrics in real-time.
+
+### ⚡ Autonomous Agent Operations (Log Execution)
+When a network incident (e.g., `HIGH_CALL_DROP` or `HIGH_PRB_UTILIZATION`) is detected on a specific gNodeB, the Multi-Agent framework triggers a validation loop against 3GPP RAG Knowledge base to automatically isolate, mitigate, and resolve the infrastructure failure.
+
+![5G Autonomous Agent Remediation Logs](docs/images/agent_remediation_logs.png)
+
+### 📈 5G Network Simulator Grafana Dashboard
+Real-time streaming metrics reflecting multi-vendor RAN properties are captured by Prometheus and visualized via Grafana. The dashboard tracks congestion profiles, peak drop rates, and counts the active successful zero-touch closed-loop remediations.
+
+![5G Autonomous Network Grafana Dashboard](docs/images/grafana_dashboard.png)
+
+---
+
 ## 📁 Repository Structure
 
 ```text
